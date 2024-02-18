@@ -1,0 +1,10 @@
+.post{
+    background-color: #f0f0f0; /* Background color */
+    border: 1px solid #ccc; /* Border */
+    padding: 20px; /* Padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+    width: 1300px; /* Maximum width */
+    height:400px;
+    align-items: center; /* Center horizontally */
+}
