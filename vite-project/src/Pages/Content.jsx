@@ -31,6 +31,15 @@ export default class Content extends Component {
     }
   };
 
+  async savePost(docid) {
+    try {
+      console.log("SavePost entered!!!!!!!! wooo")
+      const posts = await this.postObject.addSavedPostId(docid);
+      
+    } catch (error) {
+      console.error('Error saving posts:', error);
+    }
+  };
   
   
   render() {
@@ -55,8 +64,8 @@ export default class Content extends Component {
             </div>
             
           <div className='comsali'>
-            <p className='like'>Tag:</p>
-          
+            <p className='like'>Tag:{post.tag}</p>
+
             <div className='comsa'>
             
             <button type="button" className="btn btn-primary btn-sm comment">
@@ -65,7 +74,7 @@ export default class Content extends Component {
             </Link>
             </button>
 
-            <button type="button" className="btn btn-primary btn-sm save">
+            <button type="button" className="btn btn-primary btn-sm save" onClick={() => this.savePost(post.id)}>
             Save
             </button>
             </div>
