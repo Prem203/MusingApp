@@ -9,7 +9,7 @@ export default class Footer extends Component {
         <div className='line1'></div>
             <div className="text">
                 <div className="name">
-                <p>Made by Prem Vora</p>
+                <p>&copy; 2024 MusingApp. All rights reserved.</p>
             </div> 
         </div>
 

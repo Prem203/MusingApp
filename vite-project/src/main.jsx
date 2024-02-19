@@ -6,6 +6,7 @@ import Profile from './Pages/Profile';
 import Saved from './Pages/Saved';
 import Post from './Pages/Post';
 import LandingPage from './Pages/LandingPage';
+import Comment from './Pages/Comment';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
     path: "/post",
     element: <Post />,
   },
+
+  {
+    path: "/comment",
+    element: <Comment />,
+  },
   
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -34,3 +40,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
+

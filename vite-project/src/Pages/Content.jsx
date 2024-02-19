@@ -1,8 +1,40 @@
 import React, { Component } from 'react';
 import "../Styles/Content.css";
+import { Link } from 'react-router-dom';
+import { collection, getDocs } from "firebase/firestore";
+import Posts from '../Models/Posts';
+import MyFirebaseDB from '../Models/MyFireBaseDB';
 
 export default class Content extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+    };
+    this.postObject = new Posts();
+  }
+
+  componentDidMount() {
+    console.log("enetered component")
+    this.fetchPosts();
+  }
+
+  async fetchPosts() {
+    try {
+      console.log("fetchPosts entered!!!!!!!! wooo")
+      const posts = await this.postObject.fetchPosts();
+      
+      this.setState({ posts });
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  };
+
+  
+  
   render() {
+    const{posts} = this.state;
     return (
     
       <div className='main-div' >
@@ -11,21 +43,46 @@ export default class Content extends Component {
             <h4>Trending Posts:</h4>
         </div>
 
-        <div className='content'>
-            <p>This is some boring ass shit I am doing right now. Help!!!!!!!!!
-            </p>
+
+        <div>
+          
+          {posts.map((post) => (
+            <div>
+            <div className='content'>
+            <div key={post.id}>
+              <p>{post.desc}</p>
+            </div>
+            </div>
+            
+          <div className='comsali'>
+            <p className='like'>Tag:</p>
+          
+            <div className='comsa'>
+            
+            <button type="button" className="btn btn-primary btn-sm comment">
+            <Link to= "/comment">
+            Comment
+            </Link>
+            </button>
+
+            <button type="button" className="btn btn-primary btn-sm save">
+            Save
+            </button>
+            </div>
+
+          </div>
+
+        <br></br>
+        <br></br>
+        <br></br>
+        </div>
+          ))}
+          
         </div>
 
-        <div className='like'>
-        <p>Likes</p>
         </div>
+
         
-
-        <div className='comment'>
-            <p>Comments</p>
-        </div>
-
-        </div>
         
         <div className='divide'>
         </div>

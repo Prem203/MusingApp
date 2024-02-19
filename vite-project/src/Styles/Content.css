@@ -15,14 +15,11 @@ h4 {
 
 .like{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 20px;
-    position: absolute;
     font-size:small;
     font-weight: bold;
-    top:42%;
-    right: 1430px;
-    transform: translateY(-50%);
-    padding: 20px; /* Padding */
+    position: relative;
+    margin-left: 1%;
+    margin-top: 5px;
 }
 
 .divide{
@@ -33,16 +30,14 @@ h4 {
     position: relative;
     left: 100px;
 }
-.comment{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 20px;
-    position: absolute;
-    font-size:small;
-    font-weight: bold;
-    top:42%;
-    right: 1200px;
-    transform: translateY(-50%);
-    padding: 20px; /* Padding */
+.comment a{
+    position: relative;
+    margin-left: 0px;
+    margin-top: 5px;
+    color: inherit;
+    text-decoration: none;
+    padding: -10px -10px; /* Adjust padding to control button size */
+    font-size: 15px; /* Adjust font size */
 }
 
 .todaysbook{
@@ -75,4 +70,21 @@ h4 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.save{
+    position: relative;
+    margin-left: 2%;
+    margin-top: 5px;
+}
+
+.comsa{
+    margin-left: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.comsali{
+    display: flex;
+    flex-direction: row;
 }

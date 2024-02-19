@@ -10,11 +10,18 @@ export default class Post extends Component {
     return (
       <div>
         <Header2 />
-        <h4>Post</h4>
-        <div className='post'>
-            <p>This is some boring ass shit I am doing right now. Help!!!!!!!!!
-            </p>
+        <div className='sidetag'>
+            <h4>Post:</h4>
+
+            <div>
+                <textarea className="tag" type="input" placeholder="Enter Tag" />
+            </div>
+
         </div>
+
+        <textarea className="post" type="input" placeholder="Type here" />
+        
+        <input className="btn btn-primary pos" type="submit" defaultValue="Submit" />
         <Footer />
       </div>
     );
