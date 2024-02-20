@@ -4,9 +4,10 @@ import Logo from "../assets/musing-high-resolution-logo-transparent.png";
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-console.log("Headerrrr");
+
 export default class Header2 extends Component {
   render() {
+    console.log("Headerrrr2");  
     return (
       <>
         <div className='bg'><div className="logo-and-text">

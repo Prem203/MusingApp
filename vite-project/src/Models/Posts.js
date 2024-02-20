@@ -1,7 +1,6 @@
-import {Component} from "react";
-import { doc, getDocs, collection, addDoc, updateDoc, getDoc } from "firebase/firestore";
+import { doc, getDocs, collection, addDoc, updateDoc, getDoc, query, where } from "firebase/firestore";
 import MyFirebaseDB from "./MyFireBaseDB";
-import User from "./User";
+import Post from "../Pages/Post";
 
 export default class Posts {
 
@@ -114,5 +113,43 @@ export default class Posts {
           throw error;
         }
       }
+
+      async fetchSaved() {
+        try {
+
+          const savedPostList = [];
+          const usersCollection = collection(this.db.db, 'users');
+          const userDocSnapshot = await getDocs(usersCollection);
+          if (!userDocSnapshot.empty) {
+            const firstUserDoc = userDocSnapshot.docs[0];
+            const userDocRef = doc(this.db.db, "users", firstUserDoc.id);
+            const userDocSnap = await getDoc(userDocRef);
+            if (userDocSnap.exists()) {
+              const userCurrentData = userDocSnap.data();
+              const currentSavedPosts = userCurrentData.savedposts || [];
+              const postsCollection = collection(this.db.db, 'posts');
+
+              const postsDocSnap = await getDocs(query(postsCollection, where('__name__', 'in', currentSavedPosts)));
+        postsDocSnap.forEach(doc => {
+          const data = doc.data();
+          const newSavedPost = {
+            savedPostId : doc.id,
+            savedPostDesc : data.desc,
+            savedPostTag : data.tag,
+          }
+          savedPostList.push(newSavedPost);
+        });
+        console.log(savedPostList);
+        return savedPostList;
+            } else {
+              console.log("User document does not exist");
+            }
+          }
+        } catch (error) {
+          console.error('Error inside updating:', error);
+          throw error;
+        }
+      }
+      
     }
   

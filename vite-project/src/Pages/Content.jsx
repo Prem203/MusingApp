@@ -3,7 +3,6 @@ import "../Styles/Content.css";
 import { Link } from 'react-router-dom';
 import { collection, getDocs } from "firebase/firestore";
 import Posts from '../Models/Posts';
-import MyFirebaseDB from '../Models/MyFireBaseDB';
 
 export default class Content extends Component {
 
@@ -14,6 +13,7 @@ export default class Content extends Component {
     };
     this.postObject = new Posts();
   }
+
 
   componentDidMount() {
     console.log("enetered component")
@@ -69,7 +69,7 @@ export default class Content extends Component {
             <div className='comsa'>
             
             <button type="button" className="btn btn-primary btn-sm comment">
-            <Link to= "/comment">
+            <Link to= {`/comment?postid=${post.id}`}>
             Comment
             </Link>
             </button>

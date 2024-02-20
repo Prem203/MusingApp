@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import "../Styles/Footer.css"
 
-console.log("Footerrrr");
+
 export default class Footer extends Component {
   render() {
+    console.log("Footerrrr");
     return (
       <>
         <div className='line1'></div>
