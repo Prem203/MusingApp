@@ -9,3 +9,31 @@ To get a local copy up and running, follow these simple steps.
 
 ```bash
 npm install npm@latest -g
+```
+
+2.Clone the repository using the following command:
+
+```bash
+git clone https://github.com/Prem203/MusingApp.git
+```
+
+3.To install package dependencies, use the following command:
+
+```bash
+npm install
+```
+
+4.To run the program:
+
+```bash
+npm run dev
+```
+
+5.If any errors, persist make sure you have Firebase installed:
+
+```bash
+npm install --save firebase
+```
+
+##License
+The project is licensed user MIT and is publicly available to all for use.
