@@ -3,7 +3,7 @@ Musing is a dynamic web application designed for bibliophiles and literary enthu
 
 Framework - React-Vite CSS - Boostrap & custom sytling Backend - Firestore Database Hosting - Firebase Hosting
 
-##Getting Started
+## Getting Started
 To get a local copy up and running, follow these simple steps.
 1.Make sure you have the latest version of NodeJS installed using the command:
 
@@ -35,5 +35,7 @@ npm run dev
 npm install --save firebase
 ```
 
-##License
+## License
 The project is licensed user MIT and is publicly available to all for use.
+
+## Video Demo
